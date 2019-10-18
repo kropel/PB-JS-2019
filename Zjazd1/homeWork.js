@@ -23,7 +23,7 @@
 // let x = 7,
 //     fac = 1;
 //     while(x > 0){
-//         fac = fac * x--;
+//         fac *= x--;
 //     }
 //     console.log(fac);
 
@@ -97,7 +97,7 @@
 //     }
 //     tabLength--;
 // }
-// console.log(`Longest string:${index.map( x => " " + tab5[x])}`);
+// console.log(`Longest strings:${index.map( x => " " + tab5[x])}`);
 
 
 // ** 6 **
@@ -108,6 +108,7 @@
 //     indexes = [],
 //     length = tab6.length - 1,
 //     maxValue = Number.MIN_SAFE_INTEGER;
+
 //     while(length >= 0 ){
 //         if(maxValue < tab6[length]){
 //             indexes = [];
@@ -118,12 +119,13 @@
 //         }
 //         length--;        
 //     }
-//     console.log('Indexes of value: "'+tab6[indexes[0]] +'" => '+ indexes.sort((a,b) => a-b));
+
+// console.log('Indexes of value: "'+tab6[indexes[0]] +'" => '+ indexes.sort( (a,b) => a-b ));
 
 
 // ** 7 **
 
-// Calculate sum value from the given array for even numbers [1,6,23,8,4,98,3,7,3,98,4,98]
+// Calculate average value from the given array for even numbers [1,6,23,8,4,98,3,7,3,98,4,98]
 
 // let tab7 = [1,6,23,8,4,98,3,7,3,98,4,98],
 //     sum = 0,
@@ -136,12 +138,12 @@
 //         }
 //         length--;
 //     }
-//     console.log(`Average: ${sum} / ${counter} = ${sum/counter}`);
+// console.log(`Average: ${sum} / ${counter} = ${sum/counter}`);
 
 
 // ** 8 **
 
-// Calculate sum value of items at even indexes. Zero is not considered to be even number. [1,6,23,8,4,98,3,7,3,98,4,98]
+// Calculate average value of items at even indexes. Zero is not considered to be even number. [1,6,23,8,4,98,3,7,3,98,4,98]
 
 // let tab8 = [1,6,23,8,4,98,3,7,3,98,4,98],
 //     sum = 0,
@@ -162,15 +164,16 @@
 // ** 9 **
 
 // With a given start value of 0. Iterate the array and add even items and subtract odd ones. [1,6,23,8,4,98,3,7,3,98,4,98]
+
 // let tab9 = [1,6,23,8,4,98,3,7,3,98,4,98],
 //     result = 0,
-//     length = tab9.length - 1;
-// while(length >= 0){
+//     length = tab9.length;
+// while(--length >= 0){
 //     if(tab9[length] % 2 === 0){
 //         result += tab9[length];
 //     } else {
 //         result -= tab9[length];
 //     }
-//     length--;
+//     // length--;
 // }
 // console.log("Result: " + result);
