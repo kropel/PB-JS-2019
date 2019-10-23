@@ -126,13 +126,50 @@ function getRandom(min, max){
 
 // 9) Create a function that takes given array. Then takes a random element, removes it from the array and pushes it to result arrays. This takes place as long as there are elements in source array.
 
-function randomArr(arr){
-    let ranArr = [],
-        temp;
-    while(arr.length>0){
-        temp = arr.splice( getRandom(0,arr.length-1), 1);
-        ranArr.push( temp[0] );
-    }
-    return ranArr;
-}
-console.log(randomArr(tab));
+// function randomArr(arr){
+//     let ranArr = [],
+//         temp;
+//     while(arr.length>0){
+//         temp = arr.splice( getRandom(0,arr.length-1), 1);
+//         ranArr.push( temp[0] );
+//     }
+//     return ranArr;
+// }
+// console.log(randomArr(tab));
+
+
+// 11) Create a function that will return the current day name in Polish.
+
+// function getPolishNameDay(){
+//     let days = ['Niedziela', 'Poniedziałek', 'Wtorek', 'Środa', 'Czwartek', 'Piątek', 'Sobota'],
+//         currentDay = new Date().getDay();
+//     return days[currentDay];
+// }
+
+// console.log(getPolishNameDay());
+
+
+// 12) Create a function that tells us how many days till Friday 
+
+// function daysToFriday(){
+//     let currentDay = new Date().getDay();
+//         return (currentDay <= 5 ? 5-currentDay : 6);     
+// }
+
+// console.log(daysToFriday());
+
+
+// 13) Create a function that take two numbers and return the object with 4 fields. Result on 4 basic arithmetic operations. 
+
+// function basicArithmeticObj(a,b){
+//     if(typeof a != "number" || typeof b != "number"){
+//         return null;
+//     }
+//     return {
+//         sum: a+b,
+//         sub: a-b,
+//         multi: a*b,
+//         divi: a/b,
+//     };
+// }
+// console.log(basicArithmeticObj(8,4));
