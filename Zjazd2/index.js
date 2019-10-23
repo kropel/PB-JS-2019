@@ -108,7 +108,7 @@ function getRandom(min, max){
 //         rep = rep || 1;
 
 //     while(rep > 0){
-//         repArr.push(getRandomElem(arr));
+//         repArr.push(getRandomElem(arr)); //use getRandomElem(arr) from task #7
 //         rep--;
 //     }
 
