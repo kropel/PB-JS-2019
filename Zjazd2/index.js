@@ -60,16 +60,15 @@ function getRandom(min, max) {
 // 5) Create a function that based on given array returns new array in pattern [a,b,c,d,e,f] -> [a+b, c+d, e+f]    [1,3,4,1,0,3] => [4,5,3] function(array)=>array
 
 // function sumPair(arr){
-//     let sumPairArr = [],
-//     length = arr.length;
-//     for(let i = 0; i < length-2; i+=2){
-//         if(i <= length - 2){
-//             sumPairArr.push(arr[i]+arr[i+1]);
-//         }
+//     let sumPairArr = [];
+//     let length = arr.length - 1;
+//     for(let i = 0, j = 0 ; i <= length-1; i+=2, j++){        
+//             sumPairArr[j] = arr[i]+arr[i+1];       
 //     }
 //     return sumPairArr;
 // }
-// console.log(sumPair(tab));
+// console.table(sumPair(tab));
+
 
 
 // 6) For time of this example remove last element from the given array. Create a function that based on given array return new array in pattern [a,b,c,d,e] -> [a+b, c+d, e+e]
@@ -79,15 +78,17 @@ function getRandom(min, max) {
 //         length = arr.length-1;
 
 //         if(length % 2 === 0){
-//             for(let i = 0; i < length-1; i+=2){
+//             for(let i = 0; i < length; i+=2){
 //                 sumPairArr.push(arr[i] + arr[i+1]);
 //             }
 //             sumPairArr.push(arr[length]*2);
+//         } else {
+//           return ('Use function "sumPair" from task #5, array have even number of items');
 //         }
 //     return sumPairArr;
 // }
 
-// console.log(sumPair2([1,6,23,8,4,8,3,7,9]));
+// console.table(sumPair2([1,6,23,8,4,8,3,7,9]));
 
 
 
@@ -158,9 +159,8 @@ function getRandom(min, max) {
 
 // 11) Create a function that will return the current day name in Polish.
 
-// function getPolishNameDay(){
-//     let days = ['Niedziela', 'Poniedziałek', 'Wtorek', 'Środa', 'Czwartek', 'Piątek', 'Sobota'],
-//         currentDay = new Date().getDay();
+// function getPolishNameDay(currentDay = new Date().getDay()){
+//     let days = ['Niedziela', 'Poniedziałek', 'Wtorek', 'Środa', 'Czwartek', 'Piątek', 'Sobota'];
 //     return days[currentDay];
 // }
 
@@ -169,12 +169,19 @@ function getRandom(min, max) {
 
 // 12) Create a function that tells us how many days till Friday 
 
-// function daysToFriday(){
+// function daysToFriday(day = 5){
 //     let currentDay = new Date().getDay();
-//         return (currentDay <= 5 ? 5-currentDay : 6);     
+//         if(currentDay <= day){
+//           return day - currentDay;
+//         } else {
+//           return 7 - currentDay + day;
+//         }
 // }
 
 // console.log(daysToFriday());
+
+// let searchingDay = 6;
+// console.log(`Do ${getPolishNameDay(searchingDay)} pozostał${daysToFriday(searchingDay) === 1 ? "" : "o"} ${daysToFriday(searchingDay)} ${daysToFriday(searchingDay) === 1 ? "dzień" : "dni"}`);
 
 
 // 13) Create a function that take two numbers and return the object with 4 fields. Result on 4 basic arithmetic operations. 
@@ -190,4 +197,4 @@ function getRandom(min, max) {
 //         divi: a/b,
 //     };
 // }
-// console.log(basicArithmeticObj(8,4));
+// console.table(basicArithmeticObj(8,4));
