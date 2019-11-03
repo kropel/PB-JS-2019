@@ -49,40 +49,40 @@ function getBall(indexes) { // 'indexes' is an array of indexes balls array
     numberOFIteration++;
     console.log('Iteration: ' + numberOFIteration + ` whit array(${length}): ` + indexes + "\n");
 
-    switch(true){
-    case (length === 1):
-        return indexes[0];
+    switch (true) {
+        case (length === 1):
+            return indexes[0];
 
-    case (length === 2):
-        return (balls[indexes[0]] > balls[indexes[1]] ? indexes[0] : indexes[1]);
+        case (length === 2):
+            return (balls[indexes[0]] > balls[indexes[1]] ? indexes[0] : indexes[1]);
 
-    case (length === 3):
-        if (balls[indexes[0]] - balls[indexes[1]] === 0) { // if balls on indexes 0 and 1 are equal return index of third ball
-            return indexes[2];
-        } else {                                        // if balls on indexes 0 and 1 are NOT equal call getBall function without last index
-            indexes.pop();
-            return getBall(indexes);
-        }
+        case (length === 3):
+            if (balls[indexes[0]] - balls[indexes[1]] === 0) { // if balls on indexes 0 and 1 are equal return index of third ball
+                return indexes[2];
+            } else {                                        // if balls on indexes 0 and 1 are NOT equal call getBall function without last index
+                indexes.pop();
+                return getBall(indexes);
+            }
 
-    case (length === 4):
-        indexX = indexes.splice(0, 2);
-        if (sum(indexX) > sum(indexes)) {
-            return getBall(indexX);
-        } else {
-            return getBall(indexes);
-        }
-        
-    case (length === 5):
-        breakPoint = 2;
-        return findDifferendPartArray(indexes, breakPoint);
+        case (length === 4):
+            indexX = indexes.splice(0, 2);
+            if (sum(indexX) > sum(indexes)) {
+                return getBall(indexX);
+            } else {
+                return getBall(indexes);
+            }
 
-    case (length % 2 === 0):           // even
-        breakPoint = (length - 2) / 2;  // break point array 'indexes' without last two elements 
-        return findDifferendPartArray(indexes, breakPoint);
-        
-    case (length % 2 != 0):             // odd 
-        breakPoint = (length - 3) / 2;  // break point array 'indexes' without last tree elements 
-        return findDifferendPartArray(indexes, breakPoint);
+        case (length === 5):
+            breakPoint = 2;
+            return findDifferendPartArray(indexes, breakPoint);
+
+        case (length % 2 === 0):           // even
+            breakPoint = (length - 2) / 2;  // break point array 'indexes' without last two elements 
+            return findDifferendPartArray(indexes, breakPoint);
+
+        case (length % 2 != 0):             // odd 
+            breakPoint = (length - 3) / 2;  // break point array 'indexes' without last tree elements 
+            return findDifferendPartArray(indexes, breakPoint);
     }//switch
 
 
