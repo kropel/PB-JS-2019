@@ -57,10 +57,12 @@ function getIndexOf2(arrayOfBalls) {
 
 for (let i = 0; i < 200; i++) {
     let randArray = Array(getRandom(60, 8)).fill(1);
+
     randArray = mixArray(randArray);
     randArray[getRandom(randArray.length)] = 2;
+    
     let index = getIndexOf2(randArray),
-    errorMessage = randArray[index] === 2 ? "" : "ERROR";
+        errorMessage = randArray[index] === 2 ? "" : "ERROR";
 
     console.log(`${i+1}.${errorMessage} "` + randArray[index] + `" => ${index} [` + randArray + "]("+randArray.length+")");
     if(!!errorMessage) break;
