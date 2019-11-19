@@ -1,24 +1,28 @@
-let uniq = function(tab){
-    let newTab = [];
-    tab.forEach(element => {
-       if(newTab.indexOf(element)<0){
-           newTab.push(element)
-       } 
-    });
-    return newTab;
-};
-
-let diff = function(tab1, tab2){
-    let diffTab= [];
-    tab1.forEach(element => {
-        if(tab2.indexOf(element)<0){
-            diffTab.push(element);
+function uniq(someArray){
+    let uniqArray = [];
+    someArray.forEach(element => {
+        if(uniqArray.indexOf(element) < 0){
+            uniqArray.push(element);
         }
     });
-    return diffTab;
+    return uniqArray;
+}
+function diff(arrayX, arrayY){
+    let difference = [];
+    arrayX.forEach(element => {
+        if(arrayY.indexOf(element) < 0){
+            difference.push(element);
+        }
+    });
+    arrayY.forEach(element => {
+        if(arrayX.indexOf(element) < 0){
+            difference.push(element);
+        }
+    });
+    return difference;
 }
 
 module.exports = {
-    uniq: uniq,
-    diff: diff,
+    uniq,
+    diff,
 };

@@ -1,15 +1,14 @@
 {
-  "name": "raku",
+  "name": "zjazd3",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "lodash": "^4.17.15",
-    "yargs": "^14.2.0"
+    "request": "^2.88.0"
   }
 }
