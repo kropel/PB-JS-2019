@@ -4,7 +4,7 @@ const fs = require('fs');
 
 const userName = os.userInfo().username;
 let i=0,
-    path= "greathing.txt";
+    path = "greathing.txt";
 
 function showUser(n){
     i++;

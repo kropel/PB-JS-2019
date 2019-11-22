@@ -1,7 +1,7 @@
-const utils = require('./utils');
-const _ = require('lodash');
-const argv = require('yargs').argv;
-const fs = require('fs');
+const utils = require("./utils");
+const _ = require("lodash");
+const argv = require("yargs").argv;
+const fs = require("fs");
 
 // const someArray = ['ala', 3, 'ma', 'kota', 2, 'ala', 5, 3];
 // const funcResult = utils.uniq(someArray);
@@ -22,50 +22,33 @@ const fs = require('fs');
 
 let { a, b, operator } = argv;
 
-function add(a, b) {
-    return a + b;
-}
-
-function sub(a, b) {
-    return a - b;
-}
-
-function multi(a, b) {
-    return a * b;
-}
-
-function divid(a, b) {
-    return a / b;
-}
-
-function showMessage(e) {
-    if (e) {
-        console.log(e.toString());
-    } else {
-        console.log('Zapisano wynik do pliku "wynik.txt"');
-    }
-}
-function show(elem) {
+const add = (a, b) => a + b,
+  sub = (a, b) => a - b,
+  multi = (a, b) => a * b,
+  divid = (a, b) => a / b,
+  showMessage = (e) =>
+    !!e
+      ? console.log(e.toString())
+      : console.log('Zapisano wynik do pliku "wynik.txt"'),
+  show = (elem) => {
     console.log(elem);
-    fs.appendFile('wynik.txt',"\n" + elem, (err) => showMessage(err) );
-}
-
-function makeOperation(a, b, operation, showFunction) {
+    fs.appendFile("wynik.txt", "\n" + elem, (err) => showMessage(err));
+  },
+  makeOperation = (a, b, operation, showFunction) => {
     let result = operation(a, b);
     showFunction(result);
-}
+  };
 switch (operator) {
-    case '+':
-        makeOperation(a, b, add, show);
-        break;
-    case '-':
-        makeOperation(a, b, sub, show);
-        break;
-    case '*':
-        makeOperation(a, b, multi, show);
-        break;
-    case '/':
-        makeOperation(a, b, divid, show);
-        break;
-
-};
+  case "+":
+    makeOperation(a, b, add, show);
+    break;
+  case "-":
+    makeOperation(a, b, sub, show);
+    break;
+  case "*":
+    makeOperation(a, b, multi, show);
+    break;
+  case "/":
+    makeOperation(a, b, divid, show);
+    break;
+}
