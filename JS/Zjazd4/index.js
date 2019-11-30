@@ -38,27 +38,3 @@
 //     ## IV. Values of the spending in each month
 //     ## V. Values of the spending in each day of the week
 
-let Data = require('./Data.json');
-
-const getJSON = (Data) => JSON.stringify(Data);
-
-let objJSON = JSON.parse(getJSON(Data));
-
-function DetailsOfPayent(type, company, date){
-    this.type = type;
-    this.company = company;
-    this.date = new Date(date.split('-').reverse());
-}
-function Transaction(index, _id, cost, Type, company, date){
-    this.index = index;
-    this._id = _id;
-    this.cost = Number.parseFloat(cost);
-    this.detailsOfPayent = new DetailsOfPayent(Type, company, date);
-}
-
-let transactionStructure = objJSON.map((obj) => {
-    let {index, _id, cost, detailsOfPayent: {Type, company, date}} = obj;
-    return new Transaction(index, _id, cost, Type, company, date);
-});
-
-console.table(transactionStructure);
