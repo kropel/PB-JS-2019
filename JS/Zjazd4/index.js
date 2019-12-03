@@ -38,7 +38,6 @@
 //     ## IV. Values of the spending in each month
 //     ## V. Values of the spending in each day of the week
 
-
 const dataArray = require("./Data.json");
 const dataArrayJSON = JSON.stringify(dataArray);
 // console.table(dataArrayJSON);
@@ -88,7 +87,7 @@ let moneyIn2014 = payentArray
   );
 
 let moneyByCompany = payentArray.reduce((previous, current) => {
-  if (previous.hasOwnProperty(current.detailsOfPayent.company)) {
+  if (!!previous.hasOwnProperty(current.detailsOfPayent.company)) {
     previous[current.detailsOfPayent.company] = Number(
       (previous[current.detailsOfPayent.company] + current.cost).toFixed(2)
     );
@@ -99,7 +98,7 @@ let moneyByCompany = payentArray.reduce((previous, current) => {
 }, {});
 
 let moneyByTransactionType = payentArray.reduce((previous, current) => {
-  if (previous.hasOwnProperty(current.detailsOfPayent.Type)) {
+  if (!!previous.hasOwnProperty(current.detailsOfPayent.Type)) {
     previous[current.detailsOfPayent.Type] = Number(
       (previous[current.detailsOfPayent.Type] + current.cost).toFixed(2)
     );
@@ -110,7 +109,7 @@ let moneyByTransactionType = payentArray.reduce((previous, current) => {
 }, {});
 
 let moneyPerMonth = payentArray.reduce((previous, current) => {
-  if (previous.hasOwnProperty(current.getMonth())) {
+  if (!!previous.hasOwnProperty(current.getMonth())) {
     previous[current.getMonth()] = Number(
       (previous[current.getMonth()] + current.cost).toFixed(2)
     );
@@ -121,7 +120,7 @@ let moneyPerMonth = payentArray.reduce((previous, current) => {
 }, {});
 
 let moneyPerDay = payentArray.reduce((previouse, current) => {
-  if (previouse.hasOwnProperty(current.getDay())) {
+  if (!!previouse.hasOwnProperty(current.getDay())) {
     previouse[current.getDay()] = Number(
       (previouse[current.getDay()] + current.cost).toFixed(2)
     );
@@ -131,4 +130,4 @@ let moneyPerDay = payentArray.reduce((previouse, current) => {
   return previouse;
 }, {});
 
-console.log(moneyIn2014);
+console.log(moneyPerDay);

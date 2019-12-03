@@ -4,7 +4,7 @@
 # Edit at https://www.gitignore.io/?templates=linux,visualstudiocode,windows
 
 #node_modules
-#**/node_modules
+**/node_modules
 
 ### Linux ###
 *~
