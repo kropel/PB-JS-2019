@@ -38,7 +38,6 @@
 //     ## IV. Values of the spending in each month
 //     ## V. Values of the spending in each day of the week
 
-
 const dataArray = require("./Data.json");
 const dataArrayJSON = JSON.stringify(dataArray);
 // console.table(dataArrayJSON);
@@ -80,17 +79,16 @@ Payent.prototype.getType = function() {
   return this.detailsOfPayent.Type;
 };
 
+const giveMeNumber = something => Number(something.toFixed(2));
+
 let moneyIn2014 = payentArray
   .filter(payent => payent.getYear() === 2014)
-  .reduce(
-    (previous, current) => Number((previous + current.cost).toFixed(2)),
-    0
-  );
+  .reduce((previous, current) => giveMeNumber(previous + current.cost), 0);
 
 let moneyByCompany = payentArray.reduce((previous, current) => {
-  if (previous.hasOwnProperty(current.detailsOfPayent.company)) {
-    previous[current.detailsOfPayent.company] = Number(
-      (previous[current.detailsOfPayent.company] + current.cost).toFixed(2)
+  if (!!previous.hasOwnProperty(current.detailsOfPayent.company)) {
+    previous[current.detailsOfPayent.company] = giveMeNumber(
+      previous[current.detailsOfPayent.company] + current.cost
     );
   } else {
     previous[current.detailsOfPayent.company] = current.cost;
@@ -99,9 +97,9 @@ let moneyByCompany = payentArray.reduce((previous, current) => {
 }, {});
 
 let moneyByTransactionType = payentArray.reduce((previous, current) => {
-  if (previous.hasOwnProperty(current.detailsOfPayent.Type)) {
-    previous[current.detailsOfPayent.Type] = Number(
-      (previous[current.detailsOfPayent.Type] + current.cost).toFixed(2)
+  if (!!previous.hasOwnProperty(current.detailsOfPayent.Type)) {
+    previous[current.detailsOfPayent.Type] = giveMeNumber(
+      previous[current.detailsOfPayent.Type] + current.cost
     );
   } else {
     previous[current.detailsOfPayent.Type] = current.cost;
@@ -110,9 +108,9 @@ let moneyByTransactionType = payentArray.reduce((previous, current) => {
 }, {});
 
 let moneyPerMonth = payentArray.reduce((previous, current) => {
-  if (previous.hasOwnProperty(current.getMonth())) {
-    previous[current.getMonth()] = Number(
-      (previous[current.getMonth()] + current.cost).toFixed(2)
+  if (!!previous.hasOwnProperty(current.getMonth())) {
+    previous[current.getMonth()] = giveMeNumber(
+      previous[current.getMonth()] + current.cost
     );
   } else {
     previous[current.getMonth()] = current.cost;
@@ -121,9 +119,9 @@ let moneyPerMonth = payentArray.reduce((previous, current) => {
 }, {});
 
 let moneyPerDay = payentArray.reduce((previouse, current) => {
-  if (previouse.hasOwnProperty(current.getDay())) {
-    previouse[current.getDay()] = Number(
-      (previouse[current.getDay()] + current.cost).toFixed(2)
+  if (!!previouse.hasOwnProperty(current.getDay())) {
+    previouse[current.getDay()] = giveMeNumber(
+      previouse[current.getDay()] + current.cost
     );
   } else {
     previouse[current.getDay()] = current.cost;
