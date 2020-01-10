@@ -25,12 +25,26 @@ const random = (max, min = 0) => Math.floor(Math.random() * (max - min) + min); 
 
 /**
  * Shows quote in console.log
- * @param {Object}
+ *
  */
-const showQuote = ({ id, quote, author, genre = [], occurrence = 0 }) => {
+const showQuote = (
+  { id, quote, author, genre = [], occurrence = 0 },
+  color = "cyan"
+) => {
   //funkcja wyswietlajaca cytat
+  const colorLib = {
+    black: "\x1b[30m",
+    red: "\x1b[31m",
+    green: "\x1b[32m",
+    yellow: "\x1b[33m",
+    blue: "\x1b[34m",
+    magenta: "\x1b[35m",
+    cyan: "\x1b[36m",
+    white: "\x1b[37m"
+  };
   console.log(
-    `id: ${id}\n\tquote: \x1b[34m${quote}\x1b[0m\n\tauthor: ${author}\n\tgenre: ${genre.join(
+    `id: ${id}\n\tquote: ${colorLib[color] +
+      quote}\x1b[0m\n\tauthor: ${author}\n\tgenre: ${genre.join(
       ", "
     )}\n\toccurrence: ${occurrence}`
   );

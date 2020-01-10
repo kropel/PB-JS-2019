@@ -6,10 +6,10 @@ const remoteQuote = require("./remoteQuote");
 
 require("yargs")
   .command(addQuote)
-  .command(listQuotes)
   .command(deleteQuote)
   .command(randomQuote)
   .command(remoteQuote)
+  .command(listQuotes)
   .config({
     filePath: "quotes.txt",
     linkPath:

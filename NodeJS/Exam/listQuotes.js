@@ -3,6 +3,7 @@ const { showQuote, read } = require("./myUtility");
 const listQuotesHandler = (args) => {
   read(args.filePath)
     .then((data) => {
+      // console.log(args);
       let filterCategory = {
         //tworze mape dla dodatkowych parametrow potrzebna do filtrowania listy
         a: "author",
@@ -32,8 +33,11 @@ const listQuotesHandler = (args) => {
           );
         } else {
           //jesli zostal podany parametr kategorii tworze tablice z parametrem
-          categories = [args[parameter]];
+          categories = Array.isArray(args[parameter])
+            ? args[parameter]
+            : [args[parameter]];
         }
+
         if (categories.length > 1) {
           if (typeof categories[0] === "number") {
             categories.sort((a, b) => a - b);
@@ -41,11 +45,19 @@ const listQuotesHandler = (args) => {
             categories.sort((a, b) => a.localeCompare(b));
           }
         }
-
+        console.log(
+          `Listing quotes for ${
+            filterCategory.hasOwnProperty(parameter)
+              ? filterCategory[parameter]
+              : ""
+          } ${categories.join(", ")}:`
+        );
         categories.forEach((category) => {
           //iteruje po wszystkich parametrach kategorii
-          console.log(`\n\x1b[35mCategory: ${category}\x1b[0m\n`);
-          quotes //tworze przefiltrowana tablice
+          console.log(
+            `\n\x1b[35m${filterCategory[parameter] + ": " + category}\x1b[0m\n`
+          );
+          quotes //filtruje i wyswietlam tablice tablice cytatow
             .filter((quote) =>
               typeof quote[filterCategory[parameter]] === "number"
                 ? quote[filterCategory[parameter]] === category
@@ -73,24 +85,24 @@ const listQuotesHandler = (args) => {
 module.exports = {
   command: "list",
   desc:
-    "Show list of quotes.\nHas optional additional parameters: \n\t-a (filtered author list)\n\t-g (filtered genre list)\n\t-i (filtered id list)\n\t-o (filtered occurrence list)",
+    "Show list of quotes.\nHas optional additional parameters: \n-a [author]\t- filtered author list\n-g [genre]\t- filtered genre list\n-i [id]\t- filtered id list\n-o [occurrence]\t- filtered occurrence list",
   handler: listQuotesHandler,
   builder: {
     a: {
       desc:
-        "Show quotes from the list by author.\nAccepts an additional parameter [author]\nExample:\t-a [author]"
+        "Show quotes from the list by author.\nAccepts an additional and optional parameter [author]\nExample:\t list -a [author]\n"
     },
     g: {
       desc:
-        "Show quotes from the list by genre.\nAccepts an additional parameter [genre]\nExample:\t-g [genre]"
+        "Show quotes from the list by genre.\nAccepts an additional and optional parameter [genre]\nExample:\t list -g [genre]\n"
     },
     i: {
       desc:
-        "Show quotes from the list by id.\nAccepts an additional parameter [id]\nExample:\t-i [id]"
+        "Show quotes from the list by id.\nAccepts an additional and optional parameter [id]\nExample:\t list -i [id]\n"
     },
     o: {
       desc:
-        "Show quotes from the list by occurrence.\nAccepts an additional parameter [occurrence]\nExample:\t-o [occurrence]"
+        "Show quotes from the list by occurrence.\nAccepts an additional and optional parameter [occurrence]\nExample:\t list -o [occurrence]\n"
     }
   }
 };

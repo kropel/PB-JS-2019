@@ -16,7 +16,7 @@ const showRemoteQuoteHandler = (args) => {
 };
 
 module.exports = {
-  command: "rem",
+  command: "remote",
   desc: "Show random quote from an external server",
   handler: showRemoteQuoteHandler
 };

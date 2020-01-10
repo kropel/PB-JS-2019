@@ -1,1 +1,213 @@
-[{"id":47,"quote":"Wszyscy wiedzą, że czegoś nie da się zrobić. I wtedy pojawia się ten jeden, który nie wie, że się nie da, i on właśnie to coś robi.","author":"Albert Einstein","genre":["motywacja","noblista"],"occurrence":1},{"id":110,"quote":"Rób to, co możesz, tym, co posiadasz, i tam, gdzie jesteś.","author":"Theodore Roosevelt","genre":["motywacja","polityk","prezydent","noblista"],"occurrence":3},{"id":242,"quote":"Jest tylko jeden sposób nauki. Poprzez działanie.","author":"Paulo Coelho","genre":["pisarz","poeta"],"occurrence":1},{"id":386,"quote":"Czas nie zawsze przemija w jednakowym rytmie. To my decydujemy o rytmie czasu.","author":"Paulo Coelho","genre":["pisarz","poeta"],"occurrence":0},{"id":412,"quote":"Cieśla, który chce dobrze robotę wykonać, musi wpierw naostrzyć swe narzędzia.","author":"Konfucjusz","genre":["filozof","myśliciel"],"occurrence":2},{"id":537,"quote":"Podróż tysiąca mil zaczyna się od jednego kroku.","author":"Konfucjusz","genre":["filozof","myśliciel"],"occurrence":0},{"id":686,"quote":"Jeśli coś wiesz, przyznaj, że wiesz. Gdy zaś czegoś nie wiesz, przyznaj, że nie wiesz. Oto prawdziwa wiedza.","author":"Konfucjusz","genre":["filozof","myśliciel"],"occurrence":1},{"id":726,"quote":"Nic nie jest szczególnie trudne do zrobienia, jeśli tylko rozłożyć to na etapy.","author":"Henry Ford","genre":["przemysłowiec","założyciel","Ford","Motor","Company"],"occurrence":0},{"id":812,"quote":"Życie jest ciągiem doświadczeń, z których każde czyni nas silniejszymi, mimo że czasem trudno nam to sobie uświadomić.","author":"Henry Ford","genre":["przemysłowiec","założyciel","Ford","Motor","Company"],"occurrence":0},{"id":927,"quote":"Geniusz to czasem tylko instynkt, który nie podlega doskonaleniu; częściej jest to sztuka trafnego kojarzenia codziennie doskonalona dzięki obserwacji i doświadczeniu.","author":"Napoleon Bonaparte","genre":["dowódca","mąż","stanu","cesarz","Francuzów"],"occurrence":0},{"id":1098,"quote":"Tylko ten nie popełnia błędów, kto nic nie robi.","author":"Napoleon Bonaparte","genre":["dowódca","mąż","stanu","cesarz","Francuzów"],"occurrence":1},{"id":1155,"quote":"Zakres szczęścia człowieka zależy od niego samego.","author":"Abraham Lincoln","genre":["16","prezydent","USA"],"occurrence":1},{"id":1273,"quote":"Pamiętaj, iż twoja własna determinacja, by osiągnąć sukces, liczy się bardziej, niż cokolwiek innego na świecie.","author":"Abraham Lincoln","genre":["16","prezydent","USA"],"occurrence":0},{"id":137,"quote":"Gdybym miał osiem godzin na ścięcie drzewa, spędziłbym sześć na ostrzeniu siekiery","author":"Abraham Lincoln","genre":["16","prezydent","USA"],"occurrence":1},{"id":144,"quote":"Nie można pomóc biednym, będąc jednym z nich.","author":"Abraham Lincoln","genre":["16","prezydent","USA"],"occurrence":3},{"id":1596,"quote":"W konfrontacji strumienia ze skałą, strumień zawsze wygrywa - nie przez swoją siłę, ale przez wytrwałość.","author":"Budda","genre":["założyciel","buddyzmu"],"occurrence":1},{"id":1652,"quote":"Twoim zadaniem jest odkryć swe dzieło i oddać się mu całym sercem","author":"Budda","genre":["założyciel","buddyzmu"],"occurrence":0},{"id":1720,"quote":"Jedną świecą można zapalić tysiąc świec bez uszczerbku dla trwałości jej płomienia. Szczęścia też nigdy nie ubywa, gdy się nim dzielimy.","author":"Budda","genre":["założyciel","buddyzmu"],"occurrence":1}]
+[
+  {
+    "id": 47,
+    "quote": "Wszyscy wiedzą, że czegoś nie da się zrobić. I wtedy pojawia się ten jeden, który nie wie, że się nie da, i on właśnie to coś robi.",
+    "author": "Albert Einstein",
+    "genre": [
+      "motywacja",
+      "noblista"
+    ],
+    "occurrence": 1
+  },
+  {
+    "id": 110,
+    "quote": "Rób to, co możesz, tym, co posiadasz, i tam, gdzie jesteś.",
+    "author": "Theodore Roosevelt",
+    "genre": [
+      "motywacja",
+      "polityk",
+      "prezydent",
+      "noblista"
+    ],
+    "occurrence": 3
+  },
+  {
+    "id": 242,
+    "quote": "Jest tylko jeden sposób nauki. Poprzez działanie.",
+    "author": "Paulo Coelho",
+    "genre": [
+      "pisarz",
+      "poeta"
+    ],
+    "occurrence": 1
+  },
+  {
+    "id": 386,
+    "quote": "Czas nie zawsze przemija w jednakowym rytmie. To my decydujemy o rytmie czasu.",
+    "author": "Paulo Coelho",
+    "genre": [
+      "pisarz",
+      "poeta"
+    ],
+    "occurrence": 0
+  },
+  {
+    "id": 412,
+    "quote": "Cieśla, który chce dobrze robotę wykonać, musi wpierw naostrzyć swe narzędzia.",
+    "author": "Konfucjusz",
+    "genre": [
+      "filozof",
+      "myśliciel"
+    ],
+    "occurrence": 2
+  },
+  {
+    "id": 537,
+    "quote": "Podróż tysiąca mil zaczyna się od jednego kroku.",
+    "author": "Konfucjusz",
+    "genre": [
+      "filozof",
+      "myśliciel"
+    ],
+    "occurrence": 0
+  },
+  {
+    "id": 686,
+    "quote": "Jeśli coś wiesz, przyznaj, że wiesz. Gdy zaś czegoś nie wiesz, przyznaj, że nie wiesz. Oto prawdziwa wiedza.",
+    "author": "Konfucjusz",
+    "genre": [
+      "filozof",
+      "myśliciel"
+    ],
+    "occurrence": 1
+  },
+  {
+    "id": 726,
+    "quote": "Nic nie jest szczególnie trudne do zrobienia, jeśli tylko rozłożyć to na etapy.",
+    "author": "Henry Ford",
+    "genre": [
+      "przemysłowiec",
+      "założyciel",
+      "Ford",
+      "Motor",
+      "Company"
+    ],
+    "occurrence": 1
+  },
+  {
+    "id": 812,
+    "quote": "Życie jest ciągiem doświadczeń, z których każde czyni nas silniejszymi, mimo że czasem trudno nam to sobie uświadomić.",
+    "author": "Henry Ford",
+    "genre": [
+      "przemysłowiec",
+      "założyciel",
+      "Ford",
+      "Motor",
+      "Company"
+    ],
+    "occurrence": 0
+  },
+  {
+    "id": 927,
+    "quote": "Geniusz to czasem tylko instynkt, który nie podlega doskonaleniu; częściej jest to sztuka trafnego kojarzenia codziennie doskonalona dzięki obserwacji i doświadczeniu.",
+    "author": "Napoleon Bonaparte",
+    "genre": [
+      "dowódca",
+      "mąż",
+      "stanu",
+      "cesarz",
+      "Francuzów"
+    ],
+    "occurrence": 0
+  },
+  {
+    "id": 1098,
+    "quote": "Tylko ten nie popełnia błędów, kto nic nie robi.",
+    "author": "Napoleon Bonaparte",
+    "genre": [
+      "dowódca",
+      "mąż",
+      "stanu",
+      "cesarz",
+      "Francuzów"
+    ],
+    "occurrence": 1
+  },
+  {
+    "id": 1155,
+    "quote": "Zakres szczęścia człowieka zależy od niego samego.",
+    "author": "Abraham Lincoln",
+    "genre": [
+      "16",
+      "prezydent",
+      "USA"
+    ],
+    "occurrence": 2
+  },
+  {
+    "id": 1273,
+    "quote": "Pamiętaj, iż twoja własna determinacja, by osiągnąć sukces, liczy się bardziej, niż cokolwiek innego na świecie.",
+    "author": "Abraham Lincoln",
+    "genre": [
+      "16",
+      "prezydent",
+      "USA"
+    ],
+    "occurrence": 0
+  },
+  {
+    "id": 137,
+    "quote": "Gdybym miał osiem godzin na ścięcie drzewa, spędziłbym sześć na ostrzeniu siekiery",
+    "author": "Abraham Lincoln",
+    "genre": [
+      "16",
+      "prezydent",
+      "USA"
+    ],
+    "occurrence": 1
+  },
+  {
+    "id": 144,
+    "quote": "Nie można pomóc biednym, będąc jednym z nich.",
+    "author": "Abraham Lincoln",
+    "genre": [
+      "16",
+      "prezydent",
+      "USA"
+    ],
+    "occurrence": 4
+  },
+  {
+    "id": 1596,
+    "quote": "W konfrontacji strumienia ze skałą, strumień zawsze wygrywa - nie przez swoją siłę, ale przez wytrwałość.",
+    "author": "Budda",
+    "genre": [
+      "założyciel",
+      "buddyzmu"
+    ],
+    "occurrence": 1
+  },
+  {
+    "id": 1652,
+    "quote": "Twoim zadaniem jest odkryć swe dzieło i oddać się mu całym sercem",
+    "author": "Budda",
+    "genre": [
+      "założyciel",
+      "buddyzmu"
+    ],
+    "occurrence": 0
+  },
+  {
+    "id": 1720,
+    "quote": "Jedną świecą można zapalić tysiąc świec bez uszczerbku dla trwałości jej płomienia. Szczęścia też nigdy nie ubywa, gdy się nim dzielimy.",
+    "author": "Budda",
+    "genre": [
+      "założyciel",
+      "buddyzmu"
+    ],
+    "occurrence": 1
+  },
+  {
+    "id": 1885,
+    "quote": "– To wódka? – słabym głosem zapytała Małgorzata.(...)\n\t\t– Na litość boską, królowo – zachrypiał – czy ośmieliłbym się nalać damie wódki?\n\t\tTo czysty spirytus.",
+    "author": "Michaił Bułhakow",
+    "genre": [
+      "Mistrz",
+      "Małgorzata",
+      "pisarz",
+      "fantastyka",
+      "książka"
+    ],
+    "occurrence": 0
+  }
+]
