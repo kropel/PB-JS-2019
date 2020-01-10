@@ -1,1 +1,0 @@
-[{"name":"Clementine Bauch","temp":272.05,"city":"McKenziehaven"},{"name":"Patricia Lebsack","temp":293.03,"city":"South Elvis"},{"name":"Chelsey Dietrich","temp":291.45,"city":"Roscoeview"},{"name":"Mrs. Dennis Schulist","temp":263.35,"city":"South Christy"}]
