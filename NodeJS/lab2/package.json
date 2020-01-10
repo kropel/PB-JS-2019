@@ -1,0 +1,15 @@
+{
+  "name": "zjazd3",
+  "version": "1.0.0",
+  "description": "Zadania domowe na loborke nr 3 NodeJs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Radek Kuczynski",
+  "license": "ISC",
+  "dependencies": {
+    "request": "^2.88.0",
+    "yargs": "^15.0.2"
+  }
+}
