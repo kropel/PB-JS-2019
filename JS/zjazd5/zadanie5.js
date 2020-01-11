@@ -1,5 +1,6 @@
 const getRandom = (max, min = 0) =>
   Math.floor(Math.random() * (max - min) + min);
+
 let group = [...new Array(getRandom(20, 8))].map((value, index) => index + 1);
 let index = 0;
 console.log(group);

@@ -24,11 +24,12 @@ function game() {
       this.value = value;
     }
     getName() {
-      let valName;
-      this.value > 10
-        ? (valName = valuesName[this.value])
-        : (valName = this.value);
-      return `${valName} ${colorsName[this.color]}`;
+      return this.value > 10
+        ? `${valuesName[this.value]} ${colorsName[this.color]}`
+        : `${this.value} ${colorsName[this.color]}`;
+    }
+    getValue() {
+      return this.value > 10 ? valuesName[this.value] : this.value;
     }
   }
 
@@ -36,23 +37,23 @@ function game() {
     .map((color) => values.map((value) => new Card(color, value)))
     .reduce((previouse, current) => previouse.concat(current));
 
-  let hend = [];
+  let hand = [];
 
   function getRandom(max, min = 0) {
     return Math.floor(Math.random() * (max - min) + min);
   }
 
   for (let i = 0; i < 5; i++) {
-    hend.push(deck.splice(getRandom(deck.length), 1)[0]);
+    hand.push(deck.splice(getRandom(deck.length), 1)[0]);
   }
 
-  let byColors = hend.reduce((acumulator, current) => {
+  let byColors = hand.reduce((acumulator, current) => {
     acumulator[current.color] = acumulator[current.color] || [];
     acumulator[current.color].push(current);
     return acumulator;
   }, {});
 
-  let byValues = hend.reduce((acumulator, current) => {
+  let byValues = hand.reduce((acumulator, current) => {
     acumulator[current.value] = acumulator[current.value] || [];
     acumulator[current.value].push(current);
     return acumulator;
@@ -76,31 +77,42 @@ function game() {
       return ["Poker", byValues[uniqueValue[0]][0].getName()];
     }
   }
+
   //Kareta || Ful
   if (keysValues.length === 2) {
     let nameScheme = "";
-    let largestCard = "";
+    let cards = "";
     if (
       byValues[keysValues[0]].length === 4 ||
       byValues[keysValues[1]].length === 4
     ) {
       nameScheme = "Kareta";
+      cards =
+        byValues[keysValues[0]].length > byValues[keysValues[1]].length
+          ? `${byValues[keysValues[0]][0].getValue()}`
+          : `${byValues[keysValues[1]][0].getValue()}`;
     } else if (
       byValues[keysValues[0]].length === 3 ||
       byValues[keysValues[1]].length === 3
     ) {
       nameScheme = "Full";
+      cards =
+        byValues[keysValues[0]].length > byValues[keysValues[1]].length
+          ? `3'y ${byValues[keysValues[0]][0].getValue()} na 2'e ${byValues[
+              keysValues[1]
+            ][0].getValue()}`
+          : `3'y ${byValues[keysValues[1]][0].getVale()} na 2'e ${byValues[
+              keysValues[0]
+            ][0].getValue()}`;
     }
-    largestCard =
-      byValues[keysValues[0]].length > byValues[keysValues[1]].length
-        ? byValues[keysValues[0]][0].getName()
-        : byValues[keysValues[1]][0].getName();
-    return [nameScheme, largestCard];
+    return [nameScheme, cards];
   }
+
   //Kolor
   if (keysColors.length === 1) {
     return ["Kolor", byValues[uniqueValue[0]][0].getName()];
   }
+
   // Strit
   if (keysColors.length > 1 && uniqueValue.length === 5) {
     if (uniqueValue[0] - uniqueValue[uniqueValue.length - 1] === 4) {
@@ -112,6 +124,7 @@ function game() {
       }
     }
   }
+
   //Trójka || dwie pary
   if (keysValues.length === 3) {
     let namesCards = "";
@@ -127,6 +140,7 @@ function game() {
     }
     return ["Dwie pary", namesCards.slice(0, -2)];
   }
+
   //Para
   if (keysValues.length === 4) {
     for (let key in byValues) {
@@ -135,8 +149,11 @@ function game() {
       }
     }
   }
+
   //Najwyższa karta
   return ["Najwyższa karta", byValues[uniqueValue[0]][0].getName()];
 }
-
-console.log(game());
+let [nameScheme, cards] = game();
+console.log(
+  `Nazwa układu kart: ${nameScheme}\nNajmocniesza karta z układu: ${cards}`
+);

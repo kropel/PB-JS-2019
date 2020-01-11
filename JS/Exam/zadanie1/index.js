@@ -50,7 +50,6 @@ function findIndex(indexes, arrayOfBalls) {
 
 function getIndexOf2(arrayOfBalls) {
   let indexes = [];
-
   indexes = arrayOfBalls.map((v, i) => i);
   indexes = mixArray(indexes);
   return findIndex(indexes, arrayOfBalls);
