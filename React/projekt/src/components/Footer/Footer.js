@@ -1,12 +1,13 @@
 import React from "react";
+import Container from "components/Container/Container";
 
 const Footer = () => (
   <footer>
-    <div className="container">
+    <Container>
       <p>
         Shop © 2020 <br /> Designed by Andrzej
       </p>
-    </div>
+    </Container>
   </footer>
 );
 

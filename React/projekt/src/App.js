@@ -9,18 +9,16 @@ import AboutPage from "components/AboutPage/AboutPabe";
 
 function App() {
   return (
-    <div>
-      <Router>
-        <Header />
-        <Switch>
-          <Route exact path="/" component={HomePage} />
-          <Route path="/catalog" component={CatalogPage} />
-          <Route path="/about" component={AboutPage} />
-          <Route component={() => <h3>Page not found</h3>} />
-        </Switch>
-        <Footer />
-      </Router>
-    </div>
+    <Router>
+      <Header />
+      <Switch>
+        <Route exact path="/" component={HomePage} />
+        <Route path="/catalog" component={CatalogPage} />
+        <Route path="/about" component={AboutPage} />
+        <Route component={() => <h2>Page not found</h2>} />
+      </Switch>
+      <Footer />
+    </Router>
   );
 }
 

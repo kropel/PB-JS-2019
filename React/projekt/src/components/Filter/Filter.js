@@ -1,74 +1,75 @@
-import React, { useState, useCallback } from "react";
+import React, { useState } from "react";
+import FiltersList from "components/Filter/FiltersList/FiltersList";
+import ProductService from "services/products.service";
 
-const Filter = ({ filterCollback, searchCallback }) => {
+const Filter = ({ filterCollback }) => {
+  const allManufacturers = ProductService.getAllManufacturers();
+  allManufacturers.unshift("All");
+  const baseManufacturers = ["All", "Apple", "Dell"];
+  const [manufacturers, setManufacturers] = useState(baseManufacturers);
   const [radioChecked, radioChange] = useState("all");
-  const [serachValue, searchChang] = useState();
+  const [serachValue, searchChang] = useState("search...");
 
-  const handleChange = (node) => {
-    radioChange(node.target.value);
-    filterCollback(node.target.value);
+  const handleChange = (event) => {
+    radioChange(event.target.value);
+    filterCollback(event.target.value);
   };
 
-  const handleSearch = (e) => {
-    searchChang(e.target.value);
-    searchCallback(e.target.value);
+  const handleSearch = (event) => {
+    searchChang(event.target.value);
+    if (!!event.target.value) {
+      filterCollback(event.target.value);
+    } else {
+      filterCollback("all");
+    }
+  };
+
+  const handleClear = () => {
+    searchChang("search...");
+    radioChange("all");
+    filterCollback("all");
+  };
+
+  const handleFocus = (event) => {
+    if (event.target.value === "search...") {
+      searchChang("");
+    }
+  };
+
+  const handleMore = () => {
+    if (manufacturers.length === 3) {
+      setManufacturers(allManufacturers);
+    } else {
+      setManufacturers(baseManufacturers);
+    }
   };
 
   return (
     <div className="filter">
       <div className="filter-header">
         <h4>Search</h4>
-        <span className="clear">Clear</span>
+        <span className="clear" onClick={handleClear}>
+          Clear
+        </span>
       </div>
       <div>
         <input
           type="text"
-          placeholder="search..."
           value={serachValue}
           onChange={handleSearch}
+          onFocus={handleFocus}
         />
       </div>
       <h4>Manufacturer</h4>
-      <div>
-        <div>
-          <label>
-            <input
-              type="radio"
-              name="manufacturere"
-              id="all"
-              value="all"
-              checked={"all" === radioChecked}
-              onChange={handleChange}
-            />
-            All
-          </label>
-        </div>
-        <div>
-          <label>
-            <input
-              type="radio"
-              name="manufacturere"
-              id="apple"
-              value="apple"
-              checked={"apple" === radioChecked}
-              onChange={handleChange}
-            />
-            Apple
-          </label>
-        </div>
-        <div>
-          <label>
-            <input
-              type="radio"
-              name="manufacturere"
-              id="dell"
-              value="dell"
-              checked={"dell" === radioChecked}
-              onChange={handleChange}
-            />
-            Dell
-          </label>
-        </div>
+      <div className="filter-list">
+        <FiltersList
+          manufacturers={manufacturers}
+          radioChecked={radioChecked}
+          onChange={handleChange}
+        />
+        <span className="more" onClick={handleMore}>
+          {manufacturers.length === 3 ? "More" : "Less"}
+        </span>
       </div>
     </div>
   );

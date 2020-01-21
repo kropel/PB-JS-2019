@@ -1,17 +1,19 @@
 import React from "react";
 import ProductList from "components/ProductList/ProductList";
+import Container from "components/Container/Container";
+import TitleComponent from "components/TitleComponent/TitleComponent";
 
 const HomePage = () => {
   return (
-    <div className="container">
-      <h1 className="header-big">Welcome to our store</h1>
+    <Container>
+      <TitleComponent title={"Welcome to our store"} />
 
       <h2 className="header-small">Desktops</h2>
-      <ProductList category="category" value="desktop" featured={true} />
+      <ProductList value="desktop" featured />
 
       <h2 className="header-small">Tablets</h2>
-      <ProductList category="category" value="tablet" featured={true} />
-    </div>
+      <ProductList value="tablet" featured />
+    </Container>
   );
 };
 

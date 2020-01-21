@@ -1,8 +1,10 @@
 import React from "react";
+import Container from "components/Container/Container";
+import TitleComponent from "components/TitleComponent/TitleComponent";
 
 const AboutPage = () => (
-  <div className="container">
-    <h1 className="header-big">About</h1>
+  <Container>
+    <TitleComponent title={"About"} />
     <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
       scelerisque odio pharetra, rhoncus velit eget, feugiat magna. Integer ac
@@ -25,7 +27,7 @@ const AboutPage = () => (
       tellus pellentesque pharetra. Quisque pharetra lectus molestie, posuere
       lectus eget, tempor justo.
     </p>
-  </div>
+  </Container>
 );
 
 export default AboutPage;

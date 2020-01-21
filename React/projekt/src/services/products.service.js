@@ -11,14 +11,28 @@ class ProductService {
     );
   }
 
-  static getProductByCategory(category) {
-    return products.filter((product) => product.category === category);
+  static getSearchElements(fraze) {
+    let productList = products.filter((product) => {
+      let includes = false;
+      for (let value of ["name", "manufacture", "category"]) {
+        if (typeof product[value] === "string" && !includes) {
+          includes = product[value].toLowerCase().includes(fraze.toLowerCase());
+        }
+      }
+      return includes;
+    });
+    return productList;
   }
 
-  static getProductByPassedParameter(parameter, parameterValue) {
-    return products.filter((product) => {
-      return product[parameter].toLowerCase() === parameterValue;
-    });
+  static getAllManufacturers() {
+    return products
+      .reduce((previouse, current) => {
+        if (!previouse.includes(current.manufacture)) {
+          previouse.push(current.manufacture);
+        }
+        return previouse;
+      }, [])
+      .sort();
   }
 }
 
