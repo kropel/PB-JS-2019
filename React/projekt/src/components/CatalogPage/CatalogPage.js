@@ -3,15 +3,16 @@ import ProductList from "components/ProductList/ProductList";
 import Filter from "components/Filter/Filter";
 import Container from "components/Container/Container";
 import TitleComponent from "components/TitleComponent/TitleComponent";
+import PropTypes from "prop-types";
 
-const CatalogPage = () => {
+const CatalogPage = ({ title }) => {
   const [value, setValue] = useState("all");
 
   const filterCollback = (value) => setValue(value);
 
   return (
     <Container>
-      <TitleComponent title={"Catalog"} />
+      <TitleComponent title={title} />
 
       <div className="catalog">
         <div className="column-left">
@@ -24,6 +25,10 @@ const CatalogPage = () => {
       </div>
     </Container>
   );
+};
+
+CatalogPage.propTypes = {
+  title: PropTypes.string.isRequired
 };
 
 export default CatalogPage;

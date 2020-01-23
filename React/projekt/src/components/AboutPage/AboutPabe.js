@@ -1,10 +1,11 @@
 import React from "react";
 import Container from "components/Container/Container";
 import TitleComponent from "components/TitleComponent/TitleComponent";
+import PropTypes from "prop-types";
 
-const AboutPage = () => (
+const AboutPage = ({ title }) => (
   <Container>
-    <TitleComponent title={"About"} />
+    <TitleComponent title={title} />
     <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
       scelerisque odio pharetra, rhoncus velit eget, feugiat magna. Integer ac
@@ -29,5 +30,9 @@ const AboutPage = () => (
     </p>
   </Container>
 );
+
+AboutPage.propTypes = {
+  title: PropTypes.string.isRequired
+};
 
 export default AboutPage;

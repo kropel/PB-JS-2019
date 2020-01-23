@@ -1,5 +1,6 @@
 import React from "react";
 import InputFilter from "components/Filter/InputFilter/InputFilter";
+import PropTypes from "prop-types";
 
 const FiltersList = ({ manufacturers, radioChecked, onChange }) => {
   const filtersManufacturers = manufacturers.map((manu, key) => {
@@ -19,6 +20,12 @@ const FiltersList = ({ manufacturers, radioChecked, onChange }) => {
     );
   });
   return filtersManufacturers;
+};
+
+FiltersList.propTypes = {
+  manufacturers: PropTypes.arrayOf(PropTypes.string).isRequired,
+  radioChecked: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired
 };
 
 export default FiltersList;

@@ -1,6 +1,7 @@
 import React from "react";
 import Product from "components/Product/Product";
 import ProductService from "../../services/products.service";
+import PropTypes from "prop-types";
 
 const ProductList = ({ value, featured }) => {
   let productList;
@@ -19,6 +20,11 @@ const ProductList = ({ value, featured }) => {
       ))}
     </div>
   );
+};
+
+ProductList.propTypes = {
+  value: PropTypes.string.isRequired,
+  featured: PropTypes.bool
 };
 
 export default ProductList;

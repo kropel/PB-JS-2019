@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import FiltersList from "components/Filter/FiltersList/FiltersList";
 import ProductService from "services/products.service";
+import PropTypes from "prop-types";
 
 const Filter = ({ filterCollback }) => {
   const allManufacturers = ProductService.getAllManufacturers();
@@ -73,6 +74,10 @@ const Filter = ({ filterCollback }) => {
       </div>
     </div>
   );
+};
+
+Filter.propTypes = {
+  filterCollback: PropTypes.func.isRequired
 };
 
 export default Filter;
